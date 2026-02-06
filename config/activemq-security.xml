@@ -1,0 +1,16 @@
+<!-- ActiveMQ安全认证配置 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 用户名密码认证配置 -->
+    <bean id="authenticationUser" class="org.apache.activemq.security.SimpleAuthenticationPlugin">
+        <property name="users">
+            <map>
+                <entry key="admin" value="admin123"/> <!-- 用户名:密码 -->
+                <entry key="producer" value="prod456"/>
+                <entry key="consumer" value="cons789"/>
+            </map>
+        </property>
+    </bean>
+</beans>
